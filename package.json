@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "JavaScript development environment",
   "scripts": {
+    "start": "run-p start:*",
+    "start:server": "PORT=3000 node scripts/server.js",
+    "start:lt": "PORT=3000 sh -c 'lt --port ${PORT} --subdomain develop'"
   },
   "license": "MIT",
   "dependencies": {
