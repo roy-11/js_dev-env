@@ -1,9 +1,10 @@
-const express = require("express");
-const open = require("open");
+import express from "express";
+import open from "open";
+// import path from "path";
+
 const app = express();
 const port = process.env.PORT || 3000;
 
-// const path = require("path");
 // app.get("/", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../src/index.html"));
 // });
