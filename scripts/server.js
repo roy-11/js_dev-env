@@ -21,6 +21,6 @@ app.use(
 app.use(express.static("src"));
 
 app.listen(port, (err) => {
-  if (err) console.log(err);
+  if (err) console.log(err); // eslint-disable-line no-console
   else open("http://localhost:" + port);
 });

@@ -4,9 +4,12 @@
   "description": "JavaScript development environment",
   "scripts": {
     "prestart": "babel-node scripts/messages/prestart.js",
-    "start": "PORT=3000 babel-node scripts/server.js",
+    "start": "run-p start:* lint:watch",
+    "start:server": "PORT=3000 babel-node scripts/server.js",
     "share": "run-p start share:lt",
-    "share:lt": "PORT=3000 sh -c 'lt --port ${PORT} --subdomain develop'"
+    "share:lt": "PORT=3000 sh -c 'lt --port ${PORT} --subdomain develop'",
+    "lint": "esw webpack.config.* src scripts --color",
+    "lint:watch": "npm run lint -- --watch"
   },
   "license": "MIT",
   "dependencies": {
