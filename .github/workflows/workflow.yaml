@@ -3,7 +3,10 @@ on: push
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest] # 必要に応じてwindows追加
+    runs-on: ${{ matrix.os }}
     container:
       image: node:16.13.1-slim
     steps:
@@ -24,6 +27,7 @@ jobs:
         run: npm install
       - name: test
         run: npm run ci:test
+
   build:
     runs-on: ubuntu-latest
     needs: test
