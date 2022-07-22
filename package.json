@@ -12,8 +12,10 @@
     "lint:watch": "npm run lint -- --watch",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "test": "jest ./src",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "ci:test": "run-p test lint format:check"
   },
   "license": "MIT",
   "dependencies": {
