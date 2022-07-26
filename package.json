@@ -4,7 +4,7 @@
   "description": "JavaScript development environment",
   "scripts": {
     "prestart": "babel-node scripts/messages/prestart.js",
-    "start": "run-p start:* lint:watch test:watch",
+    "start": "run-p start:* lint:watch test:watch start-mockapi",
     "start:server": "PORT=3000 babel-node scripts/server.js",
     "share": "run-p start share:lt",
     "share:lt": "PORT=3000 sh -c 'lt --port ${PORT} --subdomain develop'",
@@ -15,7 +15,10 @@
     "format:check": "prettier --check .",
     "test": "jest ./src",
     "test:watch": "npm test -- --watch",
-    "ci:test": "run-p test lint format:check"
+    "ci:test": "run-p test lint format:check",
+    "generate-mockdata": "babel-node scripts/generateMockData.js",
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001",
+    "prestart-mockapi": "npm run generate-mockdata"
   },
   "license": "MIT",
   "dependencies": {
