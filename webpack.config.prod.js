@@ -1,20 +1,19 @@
 import path from 'path';
-// import HtmlWebpackPlugin from "html-webpack-plugin";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   mode: 'production',
   devtool: 'source-map',
-  entry: './src/index.js', // This is the default, so can omit if desired.
+  entry: './src/index.js', // default
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'bundle.js',
   },
   plugins: [
-    // Create HTML file that includes reference to bundled JS.
-    // new HtmlWebpackPlugin({
-    //   template: "src/index.html",
-    // }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+    }),
   ],
   module: {
     rules: [

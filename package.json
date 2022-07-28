@@ -16,7 +16,7 @@
     "test": "jest ./src",
     "test:watch": "npm test -- --watch",
     "ci:test": "run-p test lint format:check",
-    "generate-mockdata": "babel-node scripts/generateMockData.js",
+    "generate-mockdata": "babel-node scripts/mock/generateMockData.js",
     "start-mockapi": "json-server --watch src/api/db.json --port 3001",
     "prestart-mockapi": "npm run generate-mockdata",
     "clean-dist": "rimraf ./dist && mkdir dist",
