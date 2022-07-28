@@ -11,7 +11,6 @@ import fs from 'fs';
 import chalk from 'chalk';
 import schema from './mockSchema';
 
-// Extend JSF with the fake libs you want to use.
 // eslint-disable-next-line global-require
 extend('faker', () => require('faker'));
 const json = JSON.stringify(generate(schema));

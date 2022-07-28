@@ -18,7 +18,11 @@
     "ci:test": "run-p test lint format:check",
     "generate-mockdata": "babel-node scripts/generateMockData.js",
     "start-mockapi": "json-server --watch src/api/db.json --port 3001",
-    "prestart-mockapi": "npm run generate-mockdata"
+    "prestart-mockapi": "npm run generate-mockdata",
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "build": "babel-node scripts/build/build.js",
+    "postbuild": "babel-node scripts/build/server.js"
   },
   "license": "MIT",
   "dependencies": {
