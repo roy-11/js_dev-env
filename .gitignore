@@ -1,3 +1,7 @@
+# Mock
+src/api/db.json
+
+## github default node setting
 # Logs
 logs
 *.log
