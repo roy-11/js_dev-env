@@ -20,6 +20,7 @@ export default {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
+      trackjsToken: '877457e8b56a41ed8e90d2ec5f1de7dc',
     }),
   ],
   module: {
