@@ -27,6 +27,7 @@
     "prebuild": "npm-run-all clean-dist test lint",
     "build": "babel-node scripts/build/build.js",
     "postbuild": "babel-node scripts/build/server.js",
+    "deploy:dist": "surge ./dist",
     "deploy:server": "git subtree push --prefix server heroku main",
     "setup:heroku": "./scripts/setup_heroku.sh"
   },
