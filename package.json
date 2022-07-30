@@ -2,6 +2,10 @@
   "name": "js_dev-env",
   "version": "1.0.0",
   "description": "JavaScript development environment",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roy-11/js_dev-env"
+  },
   "scripts": {
     "prestart": "babel-node scripts/messages/prestart.js",
     "start": "run-p start:* lint:watch test:watch start-mockapi",
@@ -22,7 +26,9 @@
     "clean-dist": "rimraf ./dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist test lint",
     "build": "babel-node scripts/build/build.js",
-    "postbuild": "babel-node scripts/build/server.js"
+    "postbuild": "babel-node scripts/build/server.js",
+    "deploy:server": "git subtree push --prefix server heroku main",
+    "setup:heroku": "./scripts/setup_heroku.sh"
   },
   "license": "MIT",
   "dependencies": {
