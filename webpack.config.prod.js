@@ -6,8 +6,8 @@ export default {
   mode: 'production',
   devtool: 'source-map',
   entry: {
-    main: path.resolve(__dirname, 'src/index'),
-    vender: path.resolve(__dirname, 'src/vender'),
+    main: path.resolve(__dirname, 'src/sample/index'),
+    vender: path.resolve(__dirname, 'src/sample/vender'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

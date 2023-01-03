@@ -4,15 +4,25 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 export default {
   mode: 'development',
   devtool: 'eval-source-map',
-  entry: './src/index.js', // This is the default, so can omit if desired.
+  entry: {
+    main: './src/sample/index.js',
+    test: './src/practice/test/test.js',
+  },
   output: {
-    path: path.resolve(__dirname, 'src'),
+    path: path.resolve(__dirname, 'src'), // expressの公開フォルダ
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: '[name].[chunkhash].js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      filename: 'index.html',
+      template: 'src/sample/index.html',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'test.html',
+      template: 'src/practice/test/test.html',
+      chunks: ['test'],
     }),
   ],
   module: {

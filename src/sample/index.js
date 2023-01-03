@@ -1,6 +1,6 @@
 /* eslint-disable no-debugger ,import/no-extraneous-dependencies */
 import './index.css';
-import { getUsers, deleteUser } from './api/userApi';
+import { getUsers, deleteUser } from "../api/userApi";
 
 export default function sum(first, second) {
   return first + second;
